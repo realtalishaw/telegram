@@ -31,3 +31,21 @@
 2023-12-21 03:31:52,847 - INFO - main.py:7 - Bot started!
 2023-12-21 03:36:41,479 - WARNING - main.py:10 - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
 2023-12-21 03:36:46,723 - WARNING - main.py:10 - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2023-12-20 19:55:16,311 - INFO - main.py:7 - Bot started!
+2023-12-20 19:57:59,547 - INFO - main.py:7 - Bot started!
+2023-12-20 20:09:54,161 - INFO - main.py:7 - Bot started!
+2023-12-20 20:11:57,566 - INFO - main.py:7 - Bot started!
+2023-12-20 20:12:06,544 - WARNING - main.py:10 - Update "{'edited_message': {'chat': {'last_name': 'help', 'type': 'private', 'id': 503241607, 'first_name': 'future', 'username': 'imfuturehelp'}, 'text': '/start', 'group_chat_created': False, 'supergroup_chat_created': False, 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 6}], 'delete_chat_photo': False, 'caption_entities': [], 'message_id': 306, 'edit_date': 1703131926, 'photo': [], 'channel_chat_created': False, 'new_chat_members': [], 'date': 1703131821, 'new_chat_photo': [], 'from': {'id': 503241607, 'language_code': 'en', 'first_name': 'future', 'is_bot': False, 'last_name': 'help', 'username': 'imfuturehelp'}}, 'update_id': 978925780}" caused error "'NoneType' object has no attribute 'from_user'"
+2023-12-20 20:18:59,682 - INFO - main.py:7 - Bot started!
+2023-12-20 20:21:48,097 - INFO - main.py:7 - Bot started!
+2023-12-20 20:24:57,118 - INFO - main.py:7 - Bot started!
+2023-12-20 20:26:47,682 - INFO - main.py:7 - Bot started!
+2023-12-20 20:27:30,860 - INFO - main.py:7 - Bot started!
+2023-12-20 20:35:31,933 - INFO - main.py:7 - Bot started!
+2023-12-20 20:38:40,805 - INFO - main.py:7 - Bot started!
+2023-12-20 20:42:39,704 - INFO - main.py:7 - Bot started!
+2023-12-20 20:47:36,364 - INFO - main.py:7 - Bot started!
+2023-12-20 20:49:37,333 - INFO - main.py:7 - Bot started!
+2023-12-20 20:53:48,238 - INFO - main.py:7 - Bot started!
+2023-12-20 20:56:45,459 - INFO - main.py:7 - Bot started!
+2023-12-20 20:57:45,343 - INFO - main.py:7 - Bot started!

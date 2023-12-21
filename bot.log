@@ -1,0 +1,11 @@
+2023-12-20 16:19:08,312 - INFO - main.py:5 - Bot started!
+2023-12-20 17:18:52,117 - INFO - api_call.py:29 - API POST request for projects failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/projects
+2023-12-20 18:52:08,997 - INFO - main.py:6 - Bot started!
+2023-12-20 18:52:27,007 - INFO - main.py:6 - Bot started!
+2023-12-20 18:55:01,320 - INFO - main.py:6 - Bot started!
+2023-12-20 19:14:05,275 - INFO - main.py:6 - Bot started!
+2023-12-20 19:34:02,283 - INFO - main.py:6 - Bot started!
+2023-12-20 19:44:44,807 - INFO - main.py:6 - Bot started!
+2023-12-20 19:49:29,258 - INFO - main.py:6 - Bot started!
+2023-12-20 19:50:27,270 - WARNING - main.py:9 - Update "{'message': {'new_chat_photo': [], 'new_chat_members': [], 'date': 1703101827, 'chat': {'type': 'private', 'username': 'realtalishaw', 'first_name': 'Talisha', 'id': 5915765775, 'last_name': 'White'}, 'entities': [], 'photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'message_id': 64, 'channel_chat_created': False, 'text': '07-20-1993', 'caption_entities': [], 'supergroup_chat_created': False, 'from': {'first_name': 'Talisha', 'last_name': 'White', 'id': 5915765775, 'language_code': 'en', 'is_bot': False, 'username': 'realtalishaw'}}, 'update_id': 978925644}" caused error "Object of type File is not JSON serializable"
+2023-12-20 19:52:50,644 - INFO - main.py:6 - Bot started!

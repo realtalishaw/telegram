@@ -2,7 +2,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 from utils.logger import setup_logger
 from bot.onboarding import conversation_handler  
 from bot.commands import help, project, assignrole, createtask, assigntask, status, calendar, addevent, rsvp, settings, feedback
-from admin_approval import admin_approval_conversation_handler
+from bot.admin_approval import admin_approval_conversation_handler
 
 logger = setup_logger(__name__, 'bot.log')
 logger.info("Bot started!")

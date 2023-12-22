@@ -2,11 +2,12 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRe
 from telegram.ext import (ConversationHandler, CommandHandler, MessageHandler, Filters, CallbackQueryHandler,
                           CallbackContext)
 from utils.redis_cache import get_from_cache
+from bot.admin_approval import send_data_to_admin
 import json
 import re
 from utils.logger import setup_logger
 from api.user import create_user
-from admin_approval import send_data_to_admin
+
 
 logger = setup_logger(__name__, 'bot.log')
 # Define states
@@ -202,7 +203,11 @@ def send_video_message(update: Update, context: CallbackContext) -> int:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Click the button when you're ready to proceed to the quiz.", reply_markup=reply_markup)
         return WATCH_VIDEO
     else:
-        return ONBOARDING_COMPLETE
+        # When all videos are watched, transition to ONBOARDING_COMPLETE
+        # Make sure to use context.bot.send_message instead of update.message.reply_text
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Please wait while we submit your registration.....")
+        return onboarding_complete(update, context)  # Call onboarding_complete directly
+
     
 def proceed_to_quiz_handler(update: Update, context: CallbackContext) -> int:
     return quiz_handler(update, context)
@@ -235,7 +240,7 @@ def format_user_data_for_api(context):
     user_data = context.user_data
 
     formatted_data = {
-        "id": str(user_data.get("telegram_id", "")),  # Assuming you store Telegram ID as 'telegram_id'
+        "id": str(user_data.get("user_id", "")),  # Assuming you store Telegram ID as 'telegram_id'
         "firstName": user_data.get("first_name", ""),
         "lastName": user_data.get("last_name", ""),   # Add logic to capture last name during onboarding if needed
         "email": user_data.get("email", ""),
@@ -250,11 +255,12 @@ def format_user_data_for_api(context):
     return formatted_data
 
 def onboarding_complete(update, context):
+    print("++++++++Onboarding Complete Function++++++++++++")
     try:
         formatted_data = format_user_data_for_api(context)
         response = create_user(formatted_data)  # Call your API function
-
-        if response.status_code == 200:
+        print(f"+++++++++++++RESPONSE: {response}++++++++++++++++")
+        if response:
             update.message.reply_text("Onboarding complete! Your information has been sent for approval.")
             send_data_to_admin(context, formatted_data)  # Function to send data to admin
         else:

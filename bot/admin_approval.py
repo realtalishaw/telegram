@@ -1,4 +1,4 @@
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, ReplyKeyboardRemove
 from telegram.ext import ConversationHandler, CallbackQueryHandler, CallbackContext
 from api.user import update_user, verify_user
 
@@ -121,7 +121,21 @@ def edit_moon(update, context):
 def edit_satellite(update, context):
     return assign_satellite(update, context)
 
+def confirm_final(update, context):
+    query = update.callback_query
+    query.answer()
 
+    # Implement the API calls to update and verify the user here
+    # update_user(context.user_data['approved_user_id'], context.user_data['selections'])
+    # verify_user(context.user_data['approved_user_id'])
+
+    query.edit_message_text(text="User has been updated and verified successfully.")
+    return ConversationHandler.END
+
+# Cancel handler
+def cancel(update, context):
+    update.message.reply_text('Operation cancelled.', reply_markup=ReplyKeyboardRemove())
+    return ConversationHandler.END
 
 # Conversation handler for the admin approval process
 def admin_approval_conversation_handler():

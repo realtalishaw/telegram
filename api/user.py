@@ -13,6 +13,7 @@ def get_user(user_id):
 
 def create_user(user_data):
     logger.info("API Request, create_user")
+    print(f"++++++++++++User Data:+++++++++++++++++  {user_data}")
     response = api_call("users", method='POST', data=user_data)
 
     # Check if the response contains 'createUser' key and 'id' field

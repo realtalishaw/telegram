@@ -31,3 +31,49 @@
 2023-12-21 03:31:52,847 - INFO - main.py:7 - Bot started!
 2023-12-21 03:36:41,479 - WARNING - main.py:10 - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
 2023-12-21 03:36:46,723 - WARNING - main.py:10 - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2023-12-21 03:49:44,579 - INFO - main.py:7 - Bot started!
+2023-12-21 03:50:33,559 - INFO - main.py:7 - Bot started!
+2023-12-21 12:46:16,741 - INFO - main.py:7 - Bot started!
+2023-12-21 12:47:13,725 - INFO - user.py:15 - API Request, create_user
+2023-12-21 12:47:16,027 - INFO - api_call.py:29 - API POST request for users failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/users
+2023-12-21 13:13:56,136 - INFO - main.py:7 - Bot started!
+2023-12-21 13:16:00,942 - INFO - main.py:7 - Bot started!
+2023-12-21 13:16:29,632 - INFO - main.py:7 - Bot started!
+2023-12-21 13:17:37,172 - INFO - main.py:7 - Bot started!
+2023-12-21 13:17:54,207 - INFO - main.py:7 - Bot started!
+2023-12-21 13:22:06,374 - INFO - main.py:7 - Bot started!
+2023-12-21 13:29:05,882 - INFO - main.py:7 - Bot started!
+2023-12-21 13:34:03,037 - INFO - main.py:7 - Bot started!
+2023-12-21 13:41:59,006 - INFO - main.py:7 - Bot started!
+2023-12-21 13:42:42,664 - WARNING - main.py:10 - Update "{'callback_query': {'id': '6961276461156957982', 'chat_instance': '-3241866149608258687', 'data': 'proceed_to_quiz', 'message': {'chat': {'id': 5915765775, 'last_name': 'White', 'first_name': 'Talisha', 'type': 'private', 'username': 'realtalishaw'}, 'new_chat_photo': [], 'reply_markup': {'inline_keyboard': [[{'text': "I've watched the video, proceed to the quiz", 'callback_data': 'proceed_to_quiz'}]]}, 'photo': [], 'channel_chat_created': False, 'supergroup_chat_created': False, 'caption_entities': [], 'message_id': 852, 'text': "Click the button when you're ready to proceed to the quiz.", 'new_chat_members': [], 'date': 1703166161, 'entities': [], 'delete_chat_photo': False, 'group_chat_created': False, 'from': {'username': 'theometricsbot', 'is_bot': True, 'id': 6887127186, 'first_name': 'TheoBot'}}, 'from': {'username': 'realtalishaw', 'language_code': 'en', 'is_bot': False, 'id': 5915765775, 'last_name': 'White', 'first_name': 'Talisha'}}, 'update_id': 978926085}" caused error "name 'VIDEO' is not defined"
+2023-12-21 13:44:57,033 - INFO - main.py:7 - Bot started!
+2023-12-21 13:49:30,658 - INFO - main.py:7 - Bot started!
+2023-12-21 14:06:18,373 - INFO - main.py:7 - Bot started!
+2023-12-21 14:07:22,878 - INFO - onboarding.py:204 - Sending quiz: What is the capital of France?
+2023-12-21 14:07:23,151 - INFO - onboarding.py:207 - Quiz sent, waiting for response...
+2023-12-21 14:08:42,733 - INFO - main.py:7 - Bot started!
+2023-12-21 14:09:42,601 - INFO - onboarding.py:204 - Sending quiz: What is the capital of France?
+2023-12-21 14:09:42,882 - INFO - onboarding.py:207 - Quiz sent, waiting for response...
+2023-12-21 14:13:08,921 - INFO - main.py:7 - Bot started!
+2023-12-21 14:14:10,923 - INFO - onboarding.py:204 - Sending quiz: What is the capital of France?
+2023-12-21 14:14:11,197 - INFO - onboarding.py:207 - Quiz sent, waiting for response...
+2023-12-21 14:36:24,801 - INFO - main.py:7 - Bot started!
+2023-12-21 14:37:12,487 - INFO - onboarding.py:204 - Sending quiz: What is the capital of France?
+2023-12-21 14:37:12,730 - INFO - onboarding.py:207 - Quiz sent, waiting for response...
+2023-12-21 14:37:12,730 - INFO - onboarding.py:212 - Entered handle_quiz_answer
+2023-12-21 14:37:12,730 - WARNING - main.py:10 - Update "{'callback_query': {'id': '6961276461707031452', 'chat_instance': '-3241866149608258687', 'message': {'supergroup_chat_created': False, 'photo': [], 'message_id': 968, 'reply_markup': {'inline_keyboard': [[{'text': "I've watched the video, proceed to the quiz", 'callback_data': 'proceed_to_quiz'}]]}, 'group_chat_created': False, 'date': 1703169430, 'chat': {'first_name': 'Talisha', 'id': 5915765775, 'last_name': 'White', 'username': 'realtalishaw', 'type': 'private'}, 'channel_chat_created': False, 'new_chat_photo': [], 'delete_chat_photo': False, 'new_chat_members': [], 'text': "Click the button when you're ready to proceed to the quiz.", 'entities': [], 'caption_entities': [], 'from': {'id': 6887127186, 'first_name': 'TheoBot', 'is_bot': True, 'username': 'theometricsbot'}}, 'data': 'proceed_to_quiz', 'from': {'id': 5915765775, 'last_name': 'White', 'language_code': 'en', 'first_name': 'Talisha', 'is_bot': False, 'username': 'realtalishaw'}}, 'update_id': 978926146}" caused error "'NoneType' object has no attribute 'option_ids'"
+2023-12-21 14:40:39,242 - INFO - main.py:7 - Bot started!
+2023-12-21 14:41:32,747 - INFO - onboarding.py:204 - Sending quiz: What is the capital of France?
+2023-12-21 14:41:32,973 - INFO - onboarding.py:207 - Quiz sent, waiting for response...
+2023-12-21 14:42:13,083 - INFO - main.py:7 - Bot started!
+2023-12-21 14:42:58,586 - INFO - onboarding.py:204 - Sending quiz: What is the capital of France?
+2023-12-21 14:42:58,820 - INFO - onboarding.py:207 - Quiz sent, waiting for response...
+2023-12-21 15:08:18,658 - INFO - main.py:7 - Bot started!
+2023-12-21 15:09:04,891 - INFO - onboarding.py:204 - Sending quiz: What is the capital of France?
+2023-12-21 15:09:05,137 - INFO - onboarding.py:207 - +++++++++++++++++++Quiz sent, waiting for response...
+2023-12-21 15:25:31,950 - INFO - main.py:7 - Bot started!
+2023-12-21 15:27:47,817 - INFO - main.py:7 - Bot started!
+2023-12-21 15:33:29,713 - INFO - main.py:7 - Bot started!
+2023-12-21 15:37:58,595 - INFO - main.py:7 - Bot started!
+2023-12-21 17:10:10,706 - INFO - main.py:7 - Bot started!
+2023-12-21 17:12:27,026 - INFO - main.py:7 - Bot started!

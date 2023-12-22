@@ -16,6 +16,7 @@ def main():
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
+    dp.add_handler(conversation_handler())
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("project", project))
     dp.add_handler(CommandHandler("assignrole", assignrole))
@@ -28,8 +29,6 @@ def main():
     dp.add_handler(CommandHandler("settings", settings))
     dp.add_handler(CommandHandler("feedback", feedback))
 
-    # Register the conversation handler for the /start command
-    dp.add_handler(conversation_handler())
 
     # Log all errors
     dp.add_error_handler(error)

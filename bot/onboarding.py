@@ -38,9 +38,15 @@ video_links = [
 
 # Start function with modifications
 def start(update: Update, context: CallbackContext) -> int:
-    user_id = str(update.message.from_user.id)
+    user_id = update.message.from_user.id
     user_first_name = update.message.from_user.first_name
-    user_data = get_from_cache(user_id)
+    user_last_name = update.message.from_user.last_name
+    user_username = update.message.from_user.username or "N/A"
+
+    context.user_data['user_id'] = user_id
+    context.user_data['first_name'] = user_first_name
+    context.user_data['last_name'] = user_last_name
+    context.user_data['username'] = user_username
 
     if user_data:
         user_data_json = json.loads(user_data)
@@ -136,6 +142,9 @@ def button(update, context):
         return start_onboarding(update, context)
     elif query.data == 'no':
         keyboard = [
+            [InlineKeyboardButton("First Name", callback_data='change_first_name')],
+            [InlineKeyboardButton("Last Name", callback_data='change_last_name')],
+            [InlineKeyboardButton("Username", callback_data='change_username')],
             [InlineKeyboardButton("Email", callback_data='change_email')],
             [InlineKeyboardButton("Phone", callback_data='change_phone')],
             [InlineKeyboardButton("Bio", callback_data='change_bio')],
@@ -190,10 +199,11 @@ def send_video_message(update: Update, context: CallbackContext) -> int:
         keyboard = [[InlineKeyboardButton("I've watched the video, proceed to the quiz", callback_data='proceed_to_quiz')]]
         reply_markup = InlineKeyboardMarkup(keyboard)
         context.bot.send_message(chat_id=update.effective_chat.id, text="Click the button when you're ready to proceed to the quiz.", reply_markup=reply_markup)
-        return WATCH_VIDEO  # Define WATCH_VIDEO state if not already defined
+        return WATCH_VIDEO
     else:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Congratulations, you've completed all the videos and quizzes!")
         return ONBOARDING_COMPLETE
+    
 def proceed_to_quiz_handler(update: Update, context: CallbackContext) -> int:
     return quiz_handler(update, context)
 
@@ -214,11 +224,12 @@ def quiz(update: Update, context: CallbackContext) -> int:
     video_index = context.user_data.get('video_index', 0)
 
     if query.data == 'True':  # Correct answer
-        context.user_data['video_index'] += 1
-        return VIDEO if video_index + 1 < len(video_links) else ONBOARDING_COMPLETE
+        context.user_data['video_index'] += 1  # Increment video index
+        return send_video_message(update, context)  # Proceed to the next video
     else:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Incorrect answer. Try again.")
         return quiz_handler(update, context)  # Re-send the same quiz question
+
 
 
 

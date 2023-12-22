@@ -258,18 +258,23 @@ def onboarding_complete(update, context):
     print("++++++++Onboarding Complete Function++++++++++++")
     try:
         formatted_data = format_user_data_for_api(context)
-        response = create_user(formatted_data)  # Call your API function
+        response = create_user(formatted_data)
+        chat_id = update.effective_chat.id if update.effective_chat else update.callback_query.message.chat.id
         print(f"+++++++++++++RESPONSE: {response}++++++++++++++++")
         if response:
-            update.message.reply_text("Onboarding complete! Your information has been sent for approval.")
+            context.bot.send_message(chat_id=chat_id, text="Onboarding complete! Your information has been sent for approval.")
+
             send_data_to_admin(context, formatted_data)  # Function to send data to admin
+            return ConversationHandler.END
         else:
-            update.message.reply_text("There was an error submitting your information. Please try again later.")
+            error_message = response.text if response else "No response from API"
+            logger.error(f"API Request failed: {error_message}")
+            context.bot.send_message(chat_id=chat_id, text="There was an error submitting your information. Please try again later.")
+            return ConversationHandler.END
 
     except Exception as e:
         logger.error(f"Error in onboarding_complete: {e}")
-        update.message.reply_text("An unexpected error occurred. Please try again later.")
-
+        context.bot.send_message(chat_id=chat_id, text="An unexpected error occurred. Please try again later.")
     return ConversationHandler.END
 
 

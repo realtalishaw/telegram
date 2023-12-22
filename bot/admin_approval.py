@@ -12,7 +12,8 @@ satellites = ["ISS", "Hubble", "Voyager"]
 
 # Function to send user data to the admin for approval
 def send_data_to_admin(context, user_data):
-    admin_id = 'your_admin_telegram_id'  # Replace with your admin's Telegram ID
+    print("++++++++++++++++SENT TO ADMIN++++++++++++++++++++++++")
+    admin_id = '5915765775'  # Replace with your admin's Telegram ID
     details = "\n".join([f"{key}: {value}" for key, value in user_data.items() if key != 'photo'])
     
     keyboard = [

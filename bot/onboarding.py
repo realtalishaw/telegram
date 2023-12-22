@@ -1,10 +1,12 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove, Update, Poll
 from telegram.ext import (ConversationHandler, CommandHandler, MessageHandler, Filters, CallbackQueryHandler,
-                          PollAnswerHandler, CallbackContext)
-from utils.redis_cache import get_from_cache, set_in_cache
+                          CallbackContext)
+from utils.redis_cache import get_from_cache
 import json
 import re
 from utils.logger import setup_logger
+from api.user import create_user
+from admin_approval import send_data_to_admin
 
 logger = setup_logger(__name__, 'bot.log')
 # Define states
@@ -15,7 +17,7 @@ WATCH_VIDEO, QUIZ, VIDEO, ONBOARDING_COMPLETE, ADMIN_APPROVAL) = range(14)
 # Email validation regex
 EMAIL_REGEX = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
-# Quiz questions and answers
+
 # Quiz questions and answers
 quiz_questions = [
     ("What is the capital of France?", ["London", "Paris", "Berlin", "Rome"], 1),
@@ -47,6 +49,8 @@ def start(update: Update, context: CallbackContext) -> int:
     context.user_data['first_name'] = user_first_name
     context.user_data['last_name'] = user_last_name
     context.user_data['username'] = user_username
+    
+    user_data = get_from_cache(user_id)
 
     if user_data:
         user_data_json = json.loads(user_data)
@@ -108,7 +112,7 @@ def birthday_handler(update, context):
     context.user_data['birthday'] = update.message.text
     return confirmation(update, context)
 
-# Confirmation handler
+
 # Confirmation handler
 def confirmation(update, context):
     try:
@@ -142,9 +146,6 @@ def button(update, context):
         return start_onboarding(update, context)
     elif query.data == 'no':
         keyboard = [
-            [InlineKeyboardButton("First Name", callback_data='change_first_name')],
-            [InlineKeyboardButton("Last Name", callback_data='change_last_name')],
-            [InlineKeyboardButton("Username", callback_data='change_username')],
             [InlineKeyboardButton("Email", callback_data='change_email')],
             [InlineKeyboardButton("Phone", callback_data='change_phone')],
             [InlineKeyboardButton("Bio", callback_data='change_bio')],
@@ -201,7 +202,6 @@ def send_video_message(update: Update, context: CallbackContext) -> int:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Click the button when you're ready to proceed to the quiz.", reply_markup=reply_markup)
         return WATCH_VIDEO
     else:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Congratulations, you've completed all the videos and quizzes!")
         return ONBOARDING_COMPLETE
     
 def proceed_to_quiz_handler(update: Update, context: CallbackContext) -> int:
@@ -230,42 +230,43 @@ def quiz(update: Update, context: CallbackContext) -> int:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Incorrect answer. Try again.")
         return quiz_handler(update, context)  # Re-send the same quiz question
 
+# User Data Formatter
+def format_user_data_for_api(context):
+    user_data = context.user_data
 
+    formatted_data = {
+        "id": str(user_data.get("telegram_id", "")),  # Assuming you store Telegram ID as 'telegram_id'
+        "firstName": user_data.get("first_name", ""),
+        "lastName": user_data.get("last_name", ""),   # Add logic to capture last name during onboarding if needed
+        "email": user_data.get("email", ""),
+        "phone": user_data.get("phone", ""),
+        "username": user_data.get("username", ""),    # Make sure to collect this during onboarding or generate it
+        "completedOnboarding": True,
+        "role": "MEMBER",
+        "bio": user_data.get("bio", ""),
+        "status": "PENDING"
+    }
 
-
-
-
-
-# Admin approval handler
-def admin_approval_handler(update: Update, context: CallbackContext) -> int:
-    query = update.callback_query
-    query.answer()
-    
-    # Parse the callback data to get the user_id and action
-    user_id, action = query.data.split('_')
-    
-    if action == "approve":
-        # Admin selects a planet, moon, and satellite for the user
-        # This is a placeholder, you'll need to implement the actual logic
-        #assign_planet_moon_satellite_to_user(user_id)
-        
-        # Make an API call to the verify user endpoint to approve the user
-        #verify_user(user_id, True)  # Assuming this function takes user_id and a boolean for approval
-        
-        # Notify the user of their acceptance
-        context.bot.send_message(chat_id=user_id, text="Congratulations, your registration has been approved!")
-    elif action == "deny":
-        # Make an API call to the verify user endpoint to deny the user
-        #verify_user(user_id, False)  # Assuming this function takes user_id and a boolean for approval
-        
-        # Notify the user of their rejection
-        context.bot.send_message(chat_id=user_id, text="Your registration has been denied.")
-    
-    return ConversationHandler.END
+    return formatted_data
 
 def onboarding_complete(update, context):
-    update.message.reply_text("Onboarding complete! Welcome to the team!")
+    try:
+        formatted_data = format_user_data_for_api(context)
+        response = create_user(formatted_data)  # Call your API function
+
+        if response.status_code == 200:
+            update.message.reply_text("Onboarding complete! Your information has been sent for approval.")
+            send_data_to_admin(context, formatted_data)  # Function to send data to admin
+        else:
+            update.message.reply_text("There was an error submitting your information. Please try again later.")
+
+    except Exception as e:
+        logger.error(f"Error in onboarding_complete: {e}")
+        update.message.reply_text("An unexpected error occurred. Please try again later.")
+
     return ConversationHandler.END
+
+
 
 # Cancel handler
 def cancel(update, context):
@@ -290,7 +291,6 @@ def conversation_handler():
             QUIZ: [CallbackQueryHandler(quiz)],
             VIDEO: [MessageHandler(Filters.text & ~Filters.command, send_video_message)],
             ONBOARDING_COMPLETE: [MessageHandler(Filters.text & ~Filters.command, onboarding_complete)],
-            ADMIN_APPROVAL: [CallbackQueryHandler(admin_approval_handler)]
         },
         fallbacks=[CommandHandler('cancel', cancel)]
     )

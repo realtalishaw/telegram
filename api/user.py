@@ -35,6 +35,15 @@ def update_user(user_id, user_data):
         set_in_cache(cache_key, response)
     return response
 
+def verify_user(user_id, user_data):
+    logger.info("API Request, verify_user")
+    cache_key = f"user:{user_id}"
+    response = api_call(f"users/verify/{user_id}", method='POST', data=user_data)
+    if response:
+        set_in_cache(cache_key, response)
+    return response
+
+
 def delete_user(user_id):
     logger.info("API Request, delete_user")
     cache_key = f"user:{user_id}"

@@ -3,6 +3,8 @@ from utils.logger import setup_logger
 from bot.onboarding import conversation_handler  
 from bot.commands import help, project, assignrole, createtask, assigntask, status, calendar, addevent, rsvp, settings, feedback
 from bot.admin_approval import admin_approval_conversation_handler
+from dotenv import load_dotenv
+from os import getenv
 
 logger = setup_logger(__name__, 'bot.log')
 logger.info("Bot started!")
@@ -13,8 +15,14 @@ def error(update, context):
 def main():
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
-    # updater = Updater("6887127186:AAG525kpcNRTizg2LKM7BNfljDUT_k5tQ9M")
-    updater = Updater("6527896537:AAHHAekqlPv3AHsD9-gkYSAfWc8NW1Vk2Yw")
+    # Load environment variables from .env
+    load_dotenv()
+
+    # Get the Telegram token
+    telegram_token = getenv('TELEGRAM_TOKEN')
+
+    # Create the Updater using the token
+    updater = Updater(token=telegram_token)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher

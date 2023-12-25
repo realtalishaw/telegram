@@ -139,3 +139,6 @@
 2023-12-24 17:18:52,713 - INFO - main.py:8 - Bot started!
 2023-12-24 17:19:04,826 - INFO - task.py:13 - API Request, create_task
 2023-12-24 17:19:05,509 - INFO - api_call.py:29 - API POST request for tasks failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-24 18:07:11,364 - WARNING - main.py:11 - Update "None" caused error "urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6527896537:AAHHAekqlPv3AHsD9-gkYSAfWc8NW1Vk2Yw/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x104beed50>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"
+2023-12-24 18:07:12,377 - WARNING - main.py:11 - Update "None" caused error "urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6527896537:AAHHAekqlPv3AHsD9-gkYSAfWc8NW1Vk2Yw/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x104bef550>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"
+2023-12-24 18:15:13,641 - INFO - main.py:10 - Bot started!

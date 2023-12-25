@@ -4,7 +4,8 @@ from utils.redis_cache import get_from_cache, set_in_cache
 from utils.helper_functions import is_user_allowed
 import re
 from api.user import create_user
-
+from api.task import create_task
+import json
 
 def help(update, context):
     #if not is_user_allowed(update, context):
@@ -37,19 +38,48 @@ def button(update, context):
 
 
 def assignrole(update, context):
+    
     #if not is_user_allowed(update, context):
         #return
     update.message.reply_text('User role assignment is not yet implemented.')
 
 def project(update, context):
-    #if not is_user_allowed(update, context):
-        #return
+    # get params
+    params = update.message.text
+    # remove the /createtask command
+    modified_text = params.replace('/project', '')
+    # Split the input string into individual components
+    components = modified_text.split()
+
     update.message.reply_text('Creating a new project is not yet implemented.')
 
 def createtask(update, context):
-    #if not is_user_allowed(update, context):
-        #return
-    update.message.reply_text('Creating a new task is not yet implemented.')
+    # get params
+    params = update.message.text
+    # remove the /createtask command
+    modified_text = params.replace('/createtask', '')
+    # Split the input string into individual components
+    components = modified_text.split()
+
+    # Create a dictionary with the desired keys and values
+    payload = {
+        "title": components[0],
+        "description": components[1],
+        "assignee": components[2],
+        "projectID": components[3],
+        "dueDate": "2023-12-25T01:14:59.142Z",  # You need to format the dueDate as needed
+        "taskType": components[5],
+        "notes": components[6],
+        "status": components[7]
+    }
+
+    # Convert the dictionary to a JSON string
+    json_payload = json.dumps(payload, indent=2)
+
+    # Print the JSON payload
+    print(json_payload)
+    create_task(json_payload)
+    update.message.reply_text('Creating a new task initialized...')
 
 def assigntask(update, context):
     #if not is_user_allowed(update, context):

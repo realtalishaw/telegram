@@ -124,3 +124,18 @@
 2023-12-22 16:36:55,187 - INFO - api_call.py:29 - API POST request for users failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/users
 2023-12-22 16:36:55,188 - ERROR - onboarding.py:271 - API Request failed: No response from API
 2023-12-22 16:38:18,281 - INFO - user.py:15 - API Request, create_user
+2023-12-24 16:34:47,635 - INFO - main.py:8 - Bot started!
+2023-12-24 16:34:52,739 - WARNING - main.py:11 - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2023-12-24 16:34:58,545 - WARNING - main.py:11 - Update "None" caused error "Conflict: terminated by other getUpdates request; make sure that only one bot instance is running"
+2023-12-24 16:45:56,925 - INFO - main.py:8 - Bot started!
+2023-12-24 16:53:44,922 - INFO - main.py:8 - Bot started!
+2023-12-24 17:06:43,092 - INFO - main.py:8 - Bot started!
+2023-12-24 17:10:06,436 - INFO - main.py:8 - Bot started!
+2023-12-24 17:10:55,333 - INFO - main.py:8 - Bot started!
+2023-12-24 17:13:48,533 - INFO - main.py:8 - Bot started!
+2023-12-24 17:14:34,936 - INFO - task.py:13 - API Request, create_task
+2023-12-24 17:14:36,459 - INFO - api_call.py:29 - API POST request for tasks failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-24 17:17:57,168 - INFO - main.py:8 - Bot started!
+2023-12-24 17:18:52,713 - INFO - main.py:8 - Bot started!
+2023-12-24 17:19:04,826 - INFO - task.py:13 - API Request, create_task
+2023-12-24 17:19:05,509 - INFO - api_call.py:29 - API POST request for tasks failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks

@@ -82,7 +82,7 @@ def createtask(update, context):
     parsed_body = json.loads(json_payload) if isinstance(json_payload, str) else json_payload
    
     # Print the JSON payload
-    print(f"+++++++++++++++++++++++++Payload is {parsed_body},")
+    print(parsed_body)
     create_task(parsed_body)
     update.message.reply_text('Creating a new task initialized...')
 

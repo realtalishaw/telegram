@@ -33,12 +33,12 @@ def admin_approval_handler(update: Update, context: CallbackContext) -> int:
     
     if action == "approve":
         context.user_data['approved_user_id'] = user_id
-        return assign_role(update, context)
+        return assign_role(update, context)  # This should correctly return ASSIGN_ROLE
     elif action == "deny":
         context.bot.send_message(chat_id=user_id, text="Your registration has been denied.")
         return ConversationHandler.END
 
-    return ADMIN_APPROVAL
+    return ADMIN_APPROVAL  # This should be a fallback return
 
 # Function to assign role
 def assign_role(update, context):

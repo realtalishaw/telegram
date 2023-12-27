@@ -56,35 +56,46 @@ def project(update, context):
     update.message.reply_text('Creating a new project is not yet implemented.')
 
 def createtask(update, context):
+    update.message.reply_text('Example: /createtask "title example" "description example" "projectID" "notes example"')
     # get params
     params = update.message.text
     # remove the /createtask command
     modified_text = params.replace('/createtask', '')
     # Split the input string into individual components
     components = re.findall(r'"(.*?)"', modified_text)
+    # Check if there are enough components
+    if len(components) >= 4:
+      # Create a dictionary with the desired keys and values
+      payload = {
+          "title": components[0],
+          "description": components[1],
+          "projectID": components[2],
+          "taskType": "10008",
+          "notes": components[3],
+          "status": "TO_DO"
+      }
 
-    # Create a dictionary with the desired keys and values
-    payload = {
-        "title": components[0],
-        "description": components[1],
-        "projectID": components[2],
-        "taskType": "10008",
-        "notes": components[3],
-        "status": "TO_DO"
-    }
+      # Convert the dictionary to a JSON string
+      json_payload = json.dumps(payload, indent=2)
+      # Assuming 'body' is your input variable
+      # decoded_body = json.loads(body.encode().decode('unicode_escape'))
 
-    # Convert the dictionary to a JSON string
-    json_payload = json.dumps(payload, indent=2)
-    # Assuming 'body' is your input variable
-    # decoded_body = json.loads(body.encode().decode('unicode_escape'))
-
-    # Now, you can parse the decoded JSON string
-    parsed_body = json.loads(json_payload) if isinstance(json_payload, str) else json_payload
-   
-    # Print the JSON payload
-    print(parsed_body)
-    create_task(parsed_body)
-    update.message.reply_text('Creating a new task initialized...')
+      # Now, you can parse the decoded JSON string
+      parsed_body = json.loads(json_payload) if isinstance(json_payload, str) else json_payload
+    
+      # Print the JSON payload
+      print(parsed_body)
+      try:
+        response = create_task(parsed_body)
+        print(response)
+        if response == None:
+          update.message.reply_text("An error occurred adding the Jira task. Check projectID.")
+        else:
+           update.message.reply_text("New task added to Jira!")
+      except:
+        update.message.reply_text("An error occurred adding the Jira task. Check projectID.")
+    else:
+      update.message.reply_text("You didn't supply enough parameters in the /createtask command. Try again.")
 
 
 def assigntask(update, context):

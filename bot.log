@@ -215,3 +215,25 @@
 2023-12-27 17:54:26,969 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
 2023-12-27 17:56:26,223 - INFO - main.py:10 - Bot started!
 2023-12-27 17:56:40,699 - INFO - task.py:13 - API Request, create_task
+2023-12-27 18:03:04,867 - INFO - main.py:10 - Bot started!
+2023-12-27 18:03:27,803 - INFO - task.py:13 - API Request, create_task
+2023-12-27 18:03:30,312 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 18:04:59,734 - INFO - main.py:10 - Bot started!
+2023-12-27 18:05:11,420 - INFO - task.py:13 - API Request, create_task
+2023-12-27 18:05:12,567 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 18:06:23,866 - INFO - main.py:10 - Bot started!
+2023-12-27 18:06:33,578 - INFO - task.py:13 - API Request, create_task
+2023-12-27 18:06:34,531 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 18:06:50,825 - INFO - task.py:13 - API Request, create_task
+2023-12-27 18:06:59,554 - INFO - main.py:10 - Bot started!
+2023-12-27 18:07:08,548 - INFO - task.py:13 - API Request, create_task
+2023-12-27 18:07:09,273 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 18:08:07,981 - INFO - main.py:10 - Bot started!
+2023-12-27 18:08:22,413 - INFO - task.py:13 - API Request, create_task
+2023-12-27 18:08:23,110 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 18:08:41,951 - INFO - main.py:10 - Bot started!
+2023-12-27 18:09:01,326 - INFO - task.py:13 - API Request, create_task
+2023-12-27 18:09:01,830 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 18:10:58,695 - INFO - main.py:10 - Bot started!
+2023-12-27 18:11:19,967 - INFO - task.py:13 - API Request, create_task
+2023-12-27 18:11:20,624 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks

@@ -6,6 +6,8 @@ import re
 from api.user import create_user
 from api.task import create_task
 import json
+import re
+
 
 def help(update, context):
     #if not is_user_allowed(update, context):
@@ -59,27 +61,31 @@ def createtask(update, context):
     # remove the /createtask command
     modified_text = params.replace('/createtask', '')
     # Split the input string into individual components
-    components = modified_text.split()
+    components = re.findall(r'"(.*?)"', modified_text)
 
     # Create a dictionary with the desired keys and values
     payload = {
         "title": components[0],
         "description": components[1],
-        "assignee": components[2],
-        "projectID": components[3],
-        "dueDate": "2023-12-25T01:14:59.142Z",  # You need to format the dueDate as needed
-        "taskType": components[5],
-        "notes": components[6],
-        "status": components[7]
+        "projectID": components[2],
+        "taskType": "10008",
+        "notes": components[3],
+        "status": "TO_DO"
     }
 
     # Convert the dictionary to a JSON string
     json_payload = json.dumps(payload, indent=2)
+    # Assuming 'body' is your input variable
+    # decoded_body = json.loads(body.encode().decode('unicode_escape'))
 
+    # Now, you can parse the decoded JSON string
+    parsed_body = json.loads(json_payload) if isinstance(json_payload, str) else json_payload
+   
     # Print the JSON payload
-    print(json_payload)
-    create_task(json_payload)
+    print(f"+++++++++++++++++++++++++Payload is {parsed_body},")
+    create_task(parsed_body)
     update.message.reply_text('Creating a new task initialized...')
+
 
 def assigntask(update, context):
     #if not is_user_allowed(update, context):

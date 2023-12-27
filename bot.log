@@ -142,3 +142,76 @@
 2023-12-24 18:07:11,364 - WARNING - main.py:11 - Update "None" caused error "urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6527896537:AAHHAekqlPv3AHsD9-gkYSAfWc8NW1Vk2Yw/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x104beed50>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"
 2023-12-24 18:07:12,377 - WARNING - main.py:11 - Update "None" caused error "urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6527896537:AAHHAekqlPv3AHsD9-gkYSAfWc8NW1Vk2Yw/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x104bef550>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"
 2023-12-24 18:15:13,641 - INFO - main.py:10 - Bot started!
+2023-12-27 17:10:47,175 - INFO - main.py:10 - Bot started!
+2023-12-27 17:11:03,377 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:11:04,763 - INFO - api_call.py:29 - API POST request for tasks failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:11:48,391 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:11:48,908 - INFO - api_call.py:29 - API POST request for tasks failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:16:18,679 - INFO - main.py:10 - Bot started!
+2023-12-27 17:16:37,662 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:19:03,001 - INFO - main.py:10 - Bot started!
+2023-12-27 17:19:15,184 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:19:15,876 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:19:47,154 - INFO - main.py:10 - Bot started!
+2023-12-27 17:19:56,599 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:19:57,178 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:20:50,450 - INFO - main.py:10 - Bot started!
+2023-12-27 17:20:57,989 - WARNING - main.py:13 - Update "{'message': {'photo': [], 'chat': {'last_name': 'help', 'id': 503241607, 'first_name': 'future', 'type': 'private', 'username': 'imfuturehelp'}, 'date': 1703715657, 'new_chat_members': [], 'supergroup_chat_created': False, 'delete_chat_photo': False, 'new_chat_photo': [], 'group_chat_created': False, 'message_id': 130, 'caption_entities': [], 'channel_chat_created': False, 'text': '/createtask drew test 10012 testing testing testing', 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 11}], 'from': {'first_name': 'future', 'last_name': 'help', 'language_code': 'en', 'is_bot': False, 'id': 503241607, 'username': 'imfuturehelp'}}, 'update_id': 556864819}" caused error "list index out of range"
+2023-12-27 17:21:41,149 - INFO - main.py:10 - Bot started!
+2023-12-27 17:21:45,713 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:21:46,296 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:24:07,939 - INFO - main.py:10 - Bot started!
+2023-12-27 17:24:17,139 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:24:17,859 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:25:39,703 - INFO - main.py:10 - Bot started!
+2023-12-27 17:25:45,435 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:25:46,199 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:27:18,080 - INFO - main.py:10 - Bot started!
+2023-12-27 17:27:24,330 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:27:24,891 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:28:06,497 - INFO - main.py:10 - Bot started!
+2023-12-27 17:28:12,919 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:28:13,452 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:28:55,650 - INFO - main.py:10 - Bot started!
+2023-12-27 17:29:00,568 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:29:01,214 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:29:36,878 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:29:37,395 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:30:19,221 - INFO - main.py:10 - Bot started!
+2023-12-27 17:30:24,167 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:30:32,506 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:32:51,774 - INFO - main.py:10 - Bot started!
+2023-12-27 17:32:57,531 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:35:00,878 - INFO - main.py:10 - Bot started!
+2023-12-27 17:35:14,831 - WARNING - main.py:13 - Update "{'message': {'group_chat_created': False, 'caption_entities': [], 'date': 1703716514, 'text': '/createtask drew test 10012 testing testing testing', 'chat': {'first_name': 'future', 'type': 'private', 'id': 503241607, 'username': 'imfuturehelp', 'last_name': 'help'}, 'new_chat_photo': [], 'delete_chat_photo': False, 'message_id': 151, 'photo': [], 'channel_chat_created': False, 'supergroup_chat_created': False, 'new_chat_members': [], 'entities': [{'offset': 0, 'length': 11, 'type': 'bot_command'}], 'from': {'last_name': 'help', 'language_code': 'en', 'is_bot': False, 'first_name': 'future', 'id': 503241607, 'username': 'imfuturehelp'}}, 'update_id': 556864830}" caused error "list index out of range"
+2023-12-27 17:36:27,241 - INFO - main.py:10 - Bot started!
+2023-12-27 17:36:38,853 - WARNING - main.py:13 - Update "{'update_id': 556864831, 'message': {'date': 1703716598, 'delete_chat_photo': False, 'channel_chat_created': False, 'supergroup_chat_created': False, 'chat': {'type': 'private', 'first_name': 'future', 'username': 'imfuturehelp', 'id': 503241607, 'last_name': 'help'}, 'entities': [{'type': 'bot_command', 'length': 11, 'offset': 0}], 'new_chat_members': [], 'group_chat_created': False, 'photo': [], 'message_id': 152, 'caption_entities': [], 'new_chat_photo': [], 'text': '/createtask drew test 10012 testing testing testing', 'from': {'is_bot': False, 'last_name': 'help', 'first_name': 'future', 'language_code': 'en', 'username': 'imfuturehelp', 'id': 503241607}}}" caused error "list index out of range"
+2023-12-27 17:40:44,253 - INFO - main.py:10 - Bot started!
+2023-12-27 17:40:50,257 - WARNING - main.py:13 - Update "{'update_id': 556864832, 'message': {'supergroup_chat_created': False, 'delete_chat_photo': False, 'entities': [{'type': 'bot_command', 'offset': 0, 'length': 11}], 'group_chat_created': False, 'caption_entities': [], 'channel_chat_created': False, 'date': 1703716850, 'text': '/createtask drew test 10012 testing testing testing', 'new_chat_photo': [], 'message_id': 153, 'new_chat_members': [], 'photo': [], 'chat': {'type': 'private', 'first_name': 'future', 'last_name': 'help', 'id': 503241607, 'username': 'imfuturehelp'}, 'from': {'username': 'imfuturehelp', 'language_code': 'en', 'last_name': 'help', 'first_name': 'future', 'id': 503241607, 'is_bot': False}}}" caused error "list index out of range"
+2023-12-27 17:41:56,441 - INFO - main.py:10 - Bot started!
+2023-12-27 17:42:01,540 - WARNING - main.py:13 - Update "{'update_id': 556864833, 'message': {'entities': [{'length': 11, 'offset': 0, 'type': 'bot_command'}], 'date': 1703716921, 'message_id': 154, 'group_chat_created': False, 'new_chat_members': [], 'photo': [], 'text': '/createtask drew test 10012 testing testing testing', 'channel_chat_created': False, 'delete_chat_photo': False, 'supergroup_chat_created': False, 'caption_entities': [], 'chat': {'id': 503241607, 'username': 'imfuturehelp', 'first_name': 'future', 'last_name': 'help', 'type': 'private'}, 'new_chat_photo': [], 'from': {'username': 'imfuturehelp', 'id': 503241607, 'language_code': 'en', 'is_bot': False, 'first_name': 'future', 'last_name': 'help'}}}" caused error "cannot access local variable 'payload' where it is not associated with a value"
+2023-12-27 17:42:33,605 - INFO - main.py:10 - Bot started!
+2023-12-27 17:42:39,256 - WARNING - main.py:13 - Update "{'message': {'photo': [], 'chat': {'last_name': 'help', 'type': 'private', 'first_name': 'future', 'username': 'imfuturehelp', 'id': 503241607}, 'group_chat_created': False, 'new_chat_members': [], 'text': '/createtask drew test 10012 testing testing testing', 'caption_entities': [], 'new_chat_photo': [], 'channel_chat_created': False, 'date': 1703716959, 'supergroup_chat_created': False, 'message_id': 155, 'entities': [{'type': 'bot_command', 'length': 11, 'offset': 0}], 'delete_chat_photo': False, 'from': {'is_bot': False, 'last_name': 'help', 'first_name': 'future', 'username': 'imfuturehelp', 'language_code': 'en', 'id': 503241607}}, 'update_id': 556864834}" caused error "list index out of range"
+2023-12-27 17:43:29,784 - INFO - main.py:10 - Bot started!
+2023-12-27 17:43:37,061 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:43:39,626 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:45:04,236 - INFO - main.py:10 - Bot started!
+2023-12-27 17:45:09,767 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:45:11,005 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:46:16,766 - INFO - main.py:10 - Bot started!
+2023-12-27 17:46:24,465 - WARNING - main.py:13 - Update "{'message': {'new_chat_photo': [], 'supergroup_chat_created': False, 'chat': {'last_name': 'help', 'first_name': 'future', 'username': 'imfuturehelp', 'type': 'private', 'id': 503241607}, 'group_chat_created': False, 'date': 1703717184, 'caption_entities': [], 'entities': [{'length': 11, 'offset': 0, 'type': 'bot_command'}], 'photo': [], 'message_id': 162, 'delete_chat_photo': False, 'channel_chat_created': False, 'new_chat_members': [], 'text': '/createtask drew test 10012 testing testing testing', 'from': {'language_code': 'en', 'id': 503241607, 'first_name': 'future', 'username': 'imfuturehelp', 'is_bot': False, 'last_name': 'help'}}, 'update_id': 556864837}" caused error "list index out of range"
+2023-12-27 17:46:49,043 - WARNING - main.py:13 - Update "{'message': {'new_chat_photo': [], 'supergroup_chat_created': False, 'chat': {'last_name': 'help', 'first_name': 'future', 'username': 'imfuturehelp', 'type': 'private', 'id': 503241607}, 'group_chat_created': False, 'date': 1703717208, 'caption_entities': [], 'entities': [{'length': 11, 'offset': 0, 'type': 'bot_command'}], 'photo': [], 'message_id': 163, 'delete_chat_photo': False, 'channel_chat_created': False, 'new_chat_members': [], 'text': '/createtask drew test 10012 [testing testing testing]', 'from': {'language_code': 'en', 'id': 503241607, 'first_name': 'future', 'username': 'imfuturehelp', 'is_bot': False, 'last_name': 'help'}}, 'update_id': 556864838}" caused error "list index out of range"
+2023-12-27 17:47:34,752 - INFO - main.py:10 - Bot started!
+2023-12-27 17:48:17,818 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:48:18,503 - INFO - api_call.py:29 - API POST request for tasks failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:49:26,290 - INFO - main.py:10 - Bot started!
+2023-12-27 17:49:32,376 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:49:33,116 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:52:48,623 - INFO - main.py:10 - Bot started!
+2023-12-27 17:53:19,383 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:53:19,951 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:54:16,009 - INFO - main.py:10 - Bot started!
+2023-12-27 17:54:26,379 - INFO - task.py:13 - API Request, create_task
+2023-12-27 17:54:26,969 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-27 17:56:26,223 - INFO - main.py:10 - Bot started!
+2023-12-27 17:56:40,699 - INFO - task.py:13 - API Request, create_task

@@ -1,7 +1,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 from utils.logger import setup_logger
 from bot.onboarding import conversation_handler  
-from bot.commands import help, project, assignrole, createtask, assigntask, status, calendar, addevent, rsvp, settings, feedback
+from bot.commands import help, project, assignrole, createtask, calendar, addevent, rsvp, settings, feedback
 from bot.admin_approval import admin_approval_conversation_handler
 from dotenv import load_dotenv
 from os import getenv
@@ -31,8 +31,6 @@ def main():
     dp.add_handler(CommandHandler("project", project))
     dp.add_handler(CommandHandler("assignrole", assignrole))
     dp.add_handler(CommandHandler("createtask", createtask))
-    dp.add_handler(CommandHandler("assigntask", assigntask))
-    dp.add_handler(CommandHandler("status", status))
     dp.add_handler(CommandHandler("calendar", calendar))
     dp.add_handler(CommandHandler("addevent", addevent))
     dp.add_handler(CommandHandler("rsvp", rsvp))

@@ -237,3 +237,27 @@
 2023-12-27 18:10:58,695 - INFO - main.py:10 - Bot started!
 2023-12-27 18:11:19,967 - INFO - task.py:13 - API Request, create_task
 2023-12-27 18:11:20,624 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2023-12-28 14:26:17,955 - INFO - main.py:10 - Bot started!
+2023-12-28 14:26:54,663 - INFO - task.py:13 - API Request, create_task
+2023-12-28 19:56:50,652 - WARNING - main.py:13 - Update "None" caused error "urllib3 HTTPError ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+2023-12-28 20:37:47,246 - WARNING - main.py:13 - Update "None" caused error "urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6527896537:AAHHAekqlPv3AHsD9-gkYSAfWc8NW1Vk2Yw/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x10dde4650>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"
+2023-12-28 20:37:48,268 - WARNING - main.py:13 - Update "None" caused error "urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6527896537:AAHHAekqlPv3AHsD9-gkYSAfWc8NW1Vk2Yw/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x10ddf1cd0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"
+2023-12-28 20:37:49,781 - WARNING - main.py:13 - Update "None" caused error "urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6527896537:AAHHAekqlPv3AHsD9-gkYSAfWc8NW1Vk2Yw/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x10ddf3b10>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"
+2023-12-28 20:37:52,125 - WARNING - main.py:13 - Update "None" caused error "urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6527896537:AAHHAekqlPv3AHsD9-gkYSAfWc8NW1Vk2Yw/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x10de3ca90>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"
+2024-01-02 11:06:17,605 - INFO - main.py:10 - Bot started!
+2024-01-02 11:06:50,787 - INFO - main.py:10 - Bot started!
+2024-01-02 11:08:56,364 - INFO - user.py:15 - API Request, create_user
+2024-01-02 11:08:58,871 - INFO - api_call.py:29 - API POST request for users failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/users
+2024-01-02 11:08:58,875 - ERROR - onboarding.py:271 - API Request failed: No response from API
+2024-01-02 12:07:19,030 - INFO - main.py:10 - Bot started!
+2024-01-02 12:11:35,082 - INFO - task.py:13 - API Request, create_task
+2024-01-02 12:11:37,812 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2024-01-02 12:11:55,742 - WARNING - main.py:13 - Update "{'update_id': 556864897, 'edited_message': {'edit_date': 1704215516, 'group_chat_created': False, 'text': '/project "name example" "description example" "1"', 'delete_chat_photo': False, 'new_chat_members': [], 'chat': {'id': 503241607, 'last_name': 'help', 'first_name': 'future', 'type': 'private', 'username': 'imfuturehelp'}, 'photo': [], 'entities': [{'offset': 0, 'type': 'bot_command', 'length': 8}], 'supergroup_chat_created': False, 'date': 1704215511, 'channel_chat_created': False, 'caption_entities': [], 'message_id': 290, 'new_chat_photo': [], 'from': {'is_bot': False, 'first_name': 'future', 'id': 503241607, 'username': 'imfuturehelp', 'last_name': 'help', 'language_code': 'en'}}}" caused error "'NoneType' object has no attribute 'reply_text'"
+2024-01-02 12:13:04,346 - INFO - main.py:10 - Bot started!
+2024-01-02 12:13:20,994 - INFO - project.py:17 - API Request, create_project
+2024-01-02 12:13:23,363 - INFO - api_call.py:29 - API POST request for projects failed with error 400 Client Error: Bad Request for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/projects
+2024-01-02 12:21:47,891 - INFO - main.py:10 - Bot started!
+2024-01-02 12:22:14,739 - INFO - task.py:13 - API Request, create_task
+2024-01-02 12:22:15,840 - INFO - api_call.py:29 - API POST request for tasks failed with error 500 Server Error: Internal Server Error for url: https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/tasks
+2024-01-02 12:22:37,162 - INFO - task.py:13 - API Request, create_task
+2024-01-02 12:40:37,060 - INFO - task.py:13 - API Request, create_task

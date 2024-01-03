@@ -1,0 +1,56 @@
+all of the commands call the api functions so check calendar, project, task, user
+
+
+//  create project
+
+payload = {
+    "description": "Cloud migration initiative",
+    "projectLead": "627afe2219b1290068294114",
+    "name": "Example1563",
+    "status": "ACTIVE",
+    "moonID": "1"
+}
+
+{'name': 'name example', 'description': 'description example', 'projectLead': '627afe2219b1290068294114', 'status': 'ACTIVE', 'moonID': '1'}
+
+//  create task
+
+payload = {
+    "title": components[0],
+    "description": components[1],
+    "projectID": components[2],
+    "taskType": "10008",
+    "notes": components[3],
+    "status": "TO_DO"
+}
+
+//  assign role
+[ SUPER_ADMIN, ADMIN, MEMBER, VIEWER ]
+
+curl -X 'PUT' \
+  'https://dqpllfj7tb.execute-api.us-east-1.amazonaws.com/dev/users/503241607' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "role": "SUPER_ADMIN"
+}'
+
+//  assign task and status will be used by chatGPT
+
+//  events
+get events
+def get_event(event_id):
+
+//  add event
+
+{
+  "title": "string",
+  "description": "string",
+  "location": "string",
+  "date": "2023-12-31",
+  "time": "17:38:55.456"
+}
+I would write a function to transform date and time but they are not required
+
+
+//  rsvp

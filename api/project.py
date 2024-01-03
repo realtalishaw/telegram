@@ -11,8 +11,6 @@ def get_all_projects():
     logger.info("API Request, get_all_projects")
     projects = api_call("projects", method='GET')
     
-          
-
 def create_project(project_data):
     logger.info("API Request, create_project")
     response = api_call("projects", method='POST', data=project_data)

@@ -5,6 +5,7 @@ from utils.helper_functions import is_user_allowed
 import re
 from api.user import create_user
 from api.task import create_task
+from api.project import create_project
 import json
 import re
 
@@ -18,16 +19,12 @@ def help(update, context):
                  "/project - Add new project to Jira\n"
                  "/assignrole - Assign roles to users\n"
                  "/createtask - Create a new task within a project\n"
-                 "/assigntask - Assign a task to a team member\n"
-                 "/status - Check the status of a task\n"
                  "/calendar - View the Theometrics Calendar\n"
                  "/addevent - Add Event to the Theometrics Calendar\n"
                  "/rsvp - RSVP for calendar event\n"
-                 "/settings - View or Edit Account Settings\n"
                  "/feedback - Provide feedback about the bot\n"
                  "More features coming soon!")
     update.message.reply_text(help_text)
-
 
 
 def button(update, context):
@@ -40,22 +37,54 @@ def button(update, context):
 
 
 def assignrole(update, context):
-    
-    #if not is_user_allowed(update, context):
-        #return
+    if not is_user_allowed(update, context):
+        return
     update.message.reply_text('User role assignment is not yet implemented.')
 
 def project(update, context):
+    # if not is_user_allowed(update, context):
+    #     return
+    update.message.reply_text('Example: /project "name example" "description example" "moonID"')
     # get params
     params = update.message.text
     # remove the /createtask command
     modified_text = params.replace('/project', '')
     # Split the input string into individual components
-    components = modified_text.split()
+    components = re.findall(r'"(.*?)"', modified_text)
+    # Check if there are enough components
+    if len(components) >= 3:
+      # Create a dictionary with the desired keys and values
+      payload = {
+        "name": components[0],
+        "description": components[1],
+        "projectLead": "627afe2219b1290068294114",
+        "status": "ACTIVE",
+        "moonID": components[2],
+      }
 
-    update.message.reply_text('Creating a new project is not yet implemented.')
+      # Convert the dictionary to a JSON string
+      json_payload = json.dumps(payload, indent=2)
+
+      # Now, you can parse the decoded JSON string
+      parsed_body = json.loads(json_payload) if isinstance(json_payload, str) else json_payload
+    
+      # Print the JSON payload
+      print(parsed_body)
+      try:
+        response = create_project(parsed_body)
+        print(response)
+        if response == None:
+          update.message.reply_text("An error occurred while creating the Jira project. Check moonID.")
+        else:
+           update.message.reply_text("New project added to Jira!")
+      except:
+        update.message.reply_text("An error occurred while creating the Jira project. Check moonID.")
+    else:
+      update.message.reply_text("You didn't supply enough parameters in the /project command. Try again.")
 
 def createtask(update, context):
+    # if not is_user_allowed(update, context):
+    #     return
     update.message.reply_text('Example: /createtask "title example" "description example" "projectID" "notes example"')
     # get params
     params = update.message.text
@@ -96,17 +125,6 @@ def createtask(update, context):
         update.message.reply_text("An error occurred adding the Jira task. Check projectID.")
     else:
       update.message.reply_text("You didn't supply enough parameters in the /createtask command. Try again.")
-
-
-def assigntask(update, context):
-    #if not is_user_allowed(update, context):
-        #return
-    update.message.reply_text('Assigning a task is not yet implemented.')
-
-def status(update, context):
-    #if not is_user_allowed(update, context):
-        #return
-    update.message.reply_text('Checking task status is not yet implemented.')
 
 def feedback(update, context):
     #if not is_user_allowed(update, context):
